@@ -1,0 +1,15 @@
+#!/bin/sh
+
+ulimit -S -c unlimited
+echo  "crash-%e-%s-%u-%g-%p-%t" > /proc/sys/kernel/core_pattern
+sysctl  kernel.core_pattern="crash-%e-%s-%u-%g-%p-%t" 
+# suffix of the core file name
+echo  "1" > /proc/sys/kernel/core_uses_pid
+
+
+
+while [ 1 ]
+do
+    ./videoshot  
+    sleep 10
+done

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+CURDIR=$(pwd)
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CURDIR
+export PATH=$PATH:$CURDIR
+
+
+gdb ./videoshot ./crash-videoshot-11-0-0-29226-1466675327
+
